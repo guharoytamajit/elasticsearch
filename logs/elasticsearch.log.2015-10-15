@@ -1,0 +1,34 @@
+[2015-10-15 08:01:12,497][WARN ][bootstrap                ] jvm uses the client vm, make sure to run `java` with the server vm for best performance by adding `-server` to the command line
+[2015-10-15 08:01:12,575][INFO ][node                     ] [Yith] version[1.4.0], pid[1224], build[bc94bd8/2014-11-05T14:26:12Z]
+[2015-10-15 08:01:12,575][INFO ][node                     ] [Yith] initializing ...
+[2015-10-15 08:01:12,575][INFO ][plugins                  ] [Yith] loaded [], sites []
+[2015-10-15 08:01:14,872][INFO ][node                     ] [Yith] initialized
+[2015-10-15 08:01:14,872][INFO ][node                     ] [Yith] starting ...
+[2015-10-15 08:01:15,044][INFO ][transport                ] [Yith] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.1.2:9300]}
+[2015-10-15 08:01:15,231][INFO ][discovery                ] [Yith] elasticsearch/fFpjvpmST5qW1uCQ_CgFsQ
+[2015-10-15 08:01:19,059][INFO ][cluster.service          ] [Yith] new_master [Yith][fFpjvpmST5qW1uCQ_CgFsQ][tamajit][inet[/192.168.1.2:9300]], reason: zen-disco-join (elected_as_master)
+[2015-10-15 08:01:19,122][INFO ][gateway                  ] [Yith] recovered [0] indices into cluster_state
+[2015-10-15 08:01:19,138][INFO ][http                     ] [Yith] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.1.2:9200]}
+[2015-10-15 08:01:19,138][INFO ][node                     ] [Yith] started
+[2015-10-15 08:04:12,011][INFO ][cluster.metadata         ] [Yith] [user] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2015-10-15 08:04:12,862][DEBUG][action.index             ] [Yith] [user][2], node[fFpjvpmST5qW1uCQ_CgFsQ], [P], s[STARTED]: Failed to execute [index {[user][post][1], source[_na_]}]
+org.elasticsearch.index.mapper.MapperParsingException: failed to parse
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:562)
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:490)
+	at org.elasticsearch.index.shard.service.InternalIndexShard.prepareIndex(InternalIndexShard.java:413)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:184)
+	at org.elasticsearch.action.support.replication.TransportShardReplicationOperationAction$AsyncShardOperationAction.performOnPrimary(TransportShardReplicationOperationAction.java:511)
+	at org.elasticsearch.action.support.replication.TransportShardReplicationOperationAction$AsyncShardOperationAction$1.run(TransportShardReplicationOperationAction.java:419)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.elasticsearch.ElasticsearchParseException: Failed to derive xcontent from (offset=0, length=35): [116, 105, 116, 108, 101, 61, 110, 101, 119, 43, 116, 105, 116, 108, 101, 38, 109, 101, 115, 115, 97, 103, 101, 61, 110, 101, 119, 43, 109, 101, 115, 115, 97, 103, 101]
+	at org.elasticsearch.common.xcontent.XContentFactory.xContent(XContentFactory.java:195)
+	at org.elasticsearch.common.xcontent.XContentHelper.createParser(XContentHelper.java:73)
+	at org.elasticsearch.common.xcontent.XContentHelper.createParser(XContentHelper.java:51)
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:504)
+	... 8 more
+[2015-10-15 08:35:35,224][INFO ][node                     ] [Yith] stopping ...
+[2015-10-15 08:35:35,271][INFO ][node                     ] [Yith] stopped
+[2015-10-15 08:35:35,271][INFO ][node                     ] [Yith] closing ...
+[2015-10-15 08:35:35,271][INFO ][node                     ] [Yith] closed
